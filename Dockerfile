@@ -1,4 +1,4 @@
-FROM hao3039032/skynet
+FROM hao3039032/skynet:release-1.2.0
 RUN apk add make openssl unzip curl \
 && curl -SL http://luarocks.github.io/luarocks/releases/luarocks-3.0.4.tar.gz | tar -xzC /opt/ && cd /opt/luarocks-3.0.4 \
 && ./configure --prefix=/opt/skynet/rocks --lua-version=5.3 --with-lua-bin=/opt/skynet/3rd/lua --with-lua-include=/opt/skynet/3rd/lua --with-lua-lib=/opt/skynet/3rd/lua \

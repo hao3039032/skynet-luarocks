@@ -1,5 +1,5 @@
 FROM hao3039032/skynet
-RUN apk add make openssl unzip curl \
+RUN yum -y install gcc make openssl unzip curl readline-devel zlib zlib-devel openssl-devel curl-devel \
 && curl -SL http://luarocks.github.io/luarocks/releases/luarocks-3.0.4.tar.gz | tar -xzC /opt/ && cd /opt/luarocks-3.0.4 \
 && ./configure --prefix=/opt/skynet/rocks --lua-version=5.3 --with-lua-bin=/opt/skynet/3rd/lua --with-lua-include=/opt/skynet/3rd/lua --with-lua-lib=/opt/skynet/3rd/lua \
 && make && make install && ln -s /opt/skynet/rocks/bin/luarocks /opt/skynet/luarocks
